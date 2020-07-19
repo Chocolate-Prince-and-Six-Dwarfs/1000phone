@@ -129,7 +129,11 @@
   import navBar from './compontentPage/NavBar.vue'
 
   export default {
-
+    data(){
+        return {
+            index: 0,
+            }
+    },
     components:{
       'v-navbar':navBar
     }
@@ -144,7 +148,7 @@
   .header1{
     width: 100%;
     height: 60px;
-    
+
   }
   .header{
     width: 100%;

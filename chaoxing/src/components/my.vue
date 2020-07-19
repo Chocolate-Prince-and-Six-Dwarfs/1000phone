@@ -1,10 +1,10 @@
 <template>
   <div class="my">
-    <div class="my-head">我</div>
+    <span class="my-head">我</span>
     <div class="my-wrapper">
       <div class="my-info">
         <img class="my-photo" src="../assets/img/wo/default_head.png"/>
-        <div class="my-name">我是陶老大</div>
+        <span class="my-name">我是陶老板</span>
       </div>
       <div class="goto-button">></div>
     </div>
@@ -13,42 +13,42 @@
         <div class="item">
           <div class="item-context">
             <img src="../assets/img/wo/ic_my_schedule.png"/>
-            <div class="item-text">待办事项</div>
+            <span class="item-text">待办事项</span>
           </div>
           <div class="goto-button">></div>
         </div>
         <div class="item">
           <div class="item-context">
             <img src="../assets/img/wo/ic_my_learnrecord.png"/>
-            <div class="item-text">课程</div>
+            <span class="item-text">课程</span>
           </div>
           <div class="goto-button">></div>
         </div>
         <div class="item">
           <div class="item-context">
             <img src="../assets/img/wo/ic_my_yunpan.png"/>
-            <div class="item-text">云盘</div>
+            <span class="item-text">云盘</span>
           </div>
           <div class="goto-button">></div>
         </div>
         <div class="item">
           <div class="item-context">
             <img src="../assets/img/wo/ic_my_group.png"/>
-            <div class="item-text">小组</div>
+            <span class="item-text">小组</span>
           </div>
           <div class="goto-button">></div>
         </div>
         <div class="item">
           <div class="item-context">
             <img src="../assets/img/wo/ic_my_note.png"/>
-            <div class="item-text">笔记本</div>
+            <span class="item-text">笔记本</span>
           </div>
           <div class="goto-button">></div>
         </div>
         <div class="item">
           <div class="item-context">
             <img src="../assets/img/wo/ic_my_setting.png"/>
-            <div class="item-text">设置</div>
+            <span class="item-text">设置</span>
           </div>
           <div class="goto-button">></div>
         </div>
@@ -77,9 +77,11 @@ export default {
 }
 .my-head{
   width: 100%;
-  height: 24px;
+  height: 23px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   margin-bottom: 1px;
-  font-size: 1.2em;
+  font-size: 23px;
   text-align: center;
   background-color: #ffffff;
 }
