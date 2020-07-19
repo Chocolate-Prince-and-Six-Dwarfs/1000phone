@@ -47,7 +47,6 @@ export default {
     .nav
     {
         width: 100vw;
-        border-top: 1px solid #e5e5e5;
     }
     .nav-placeholder
     {
@@ -65,6 +64,7 @@ export default {
         justify-content: space-around;
         align-items: center;
         font-size: 16px;
+        border-top: 1px solid #e5e5e5;
         background: #f7f7f7;
     }
     .nav-item
