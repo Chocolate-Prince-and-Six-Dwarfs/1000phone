@@ -24,7 +24,7 @@ import infoSel from '../../assets/img/daohang/tab_message_sel.png'
 import note from '../../assets/img/daohang/tab_note_nor.png'
 import noteSel from '../../assets/img/daohang/tab_note_sel.png'
 import my from '../../assets/img/daohang/tab_mine_nor.png'
-import mySel from '../../assets/img/daohang/tab_mine_nor.png'
+import mySel from '../../assets/img/daohang/tab_mine_sel.png'
 export default {
     props: {
         navIndex: Number
