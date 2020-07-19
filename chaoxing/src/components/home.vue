@@ -59,10 +59,7 @@ export default {
         return {
             index: 0,
             showSearchImg: true,
-            menu: {},
-            RegulationMenu: [],
-            OfficeApplications: [],
-            TeachingApplication: [],
+            menu: {}
         }
     },
     created() {
