@@ -94,6 +94,10 @@ export default {
 
 <style>
 .homeTopNav{
+    z-index: 9999;
+    position: fixed;
+    background-color: #ffffff;
+    top: 0px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -130,6 +134,7 @@ export default {
 }
 .homeMainBody{
     width: 100%;
+    margin-top: 75px;
 }
 .homeSearch{
     position: relative;
@@ -180,15 +185,15 @@ input::-webkit-input-placeholder{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
 }
 .optionsItem{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     margin: 10px;
 }
 .MenuItemTitle{
