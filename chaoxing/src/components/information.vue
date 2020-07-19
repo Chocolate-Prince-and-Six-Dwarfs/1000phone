@@ -70,22 +70,71 @@
 
       </div>
 
+      <div class="class-item">
+        <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
+        <div class="class-item-info">
+          <span class="class-item-name">2020大数据处理技术</span>
+          <span class="class-item-time">06-13</span>
+
+          <div class="class-teacher">
+            <span class="class-teacher-info">赖俊良:[实验7]</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="class-item">
+        <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
+        <div class="class-item-info">
+          <span class="class-item-name">2020大数据处理技术</span>
+          <span class="class-item-time">06-13</span>
+
+          <div class="class-teacher">
+            <span class="class-teacher-info">赖俊良:[实验7]</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="class-item">
+        <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
+        <div class="class-item-info">
+          <span class="class-item-name">2020大数据处理技术</span>
+          <span class="class-item-time">06-13</span>
+
+          <div class="class-teacher">
+            <span class="class-teacher-info">赖俊良:[实验7]</span>
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
+    <!-- 底部导航栏 -->
+     <v-navbar :navIndex="1"></v-navbar>
   </div>
 
 </template>
 
 <script>
-export default {
+  import navBar from './compontentPage/NavBar.vue'
 
-}
+  export default {
+
+    components:{
+      'v-navbar':navBar
+    }
+  }
 </script>
 
 <style>
   .allpage{
     width: 100%;
+    height: 100%;
   }
   .header{
     width: 100%;
@@ -117,7 +166,7 @@ export default {
   }
 
   .searchBar{
-    height: 25px;
+    height: 38px;
     text-align: center;
     background-color: #F8F8FF;
     border-radius: 15px;
