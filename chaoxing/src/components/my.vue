@@ -6,7 +6,9 @@
         <img class="my-photo" src="../assets/img/wo/default_head.png"/>
         <span class="my-name">我是陶老板</span>
       </div>
-      <div class="goto-button">></div>
+      <div class="goto-button">
+        <router-link to="/myAccount">></router-link>
+      </div>
     </div>
     <div class="list-wrapper">
       <div class="list-item">
@@ -110,7 +112,7 @@ export default {
 .goto-button{
   font-size: 2em;
   margin: 10px;
-  color: #d4d4d4;
+  color: #cccccc;
 }
 .list-item{
   width: 100%;
@@ -131,5 +133,9 @@ export default {
   width: 40px;
   height: 40px;
   margin: 15px;
+}
+a{
+  text-decoration: none;   /* 清除a标签的下划线 */
+  color:#cccccc;
 }
 </style>
