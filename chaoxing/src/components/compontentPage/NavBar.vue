@@ -34,10 +34,10 @@ export default {
         return  {
             navList: [
                 {'text': '首页', 'to': '/', 'img': home, 'imgSel': homeSel},
-                {'text': '消息', 'to': '/info', 'img': info, 'imgSel': infoSel},
+                {'text': '消息', 'to': '/information', 'img': info, 'imgSel': infoSel},
                 {'text': '笔记', 'to': '/note', 'img': note, 'imgSel': noteSel},
                 {'text': '我', 'to': '/my', 'img': my, 'imgSel': mySel}
-            ] 
+            ]
         }
     }
 }

@@ -17,7 +17,7 @@ export default new Router({
       component: Home
     },
     {
-      path: '/information',
+      path: '/info',
       name: 'Informationome',
       component: Information
     },
