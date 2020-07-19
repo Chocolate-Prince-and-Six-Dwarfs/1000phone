@@ -28,7 +28,7 @@
               <img class="note-head" src="https://mooc1-2.chaoxing.com/u/28/60847090" alt="">
               <div class="note-text-info">
                 <div class="name-type">
-                    <div class="note-owner-name">我是陶老大</div>
+                    <div class="note-owner-name">我是陶老板</div>
                     <div class="type">
                         <span class="type-text">私有</span>
                         <span class="group">个人笔记></span>
