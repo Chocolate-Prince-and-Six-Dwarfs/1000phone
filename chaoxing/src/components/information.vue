@@ -148,7 +148,6 @@
   .header1{
     width: 100%;
     height: 60px;
-
   }
   .header{
     width: 100%;
@@ -208,13 +207,14 @@
   .message-item{
     width: 100%;
     display: flex;
-    margin-left: 18px;
+    /* margin-left: 18px; */
     margin-top: 27px;
     margin-bottom: 32px;
   }
   .message-item-pic{
     width: 50px;
     height: 50px;
+    margin-left: 18px;
   }
   .message-item-name{
     margin-top: 15px;
@@ -224,13 +224,14 @@
   .class-item{
     width: 100%;
     display: flex;
-    margin-left: 18px;
+    /* margin-left: 18px; */
     margin-top: 27px;
     margin-bottom: 32px;
   }
   .class-item-pic{
     width: 50px;
     height: 50px;
+    margin-left: 18px;
   }
   .class-item-info{
     width: 100%;
