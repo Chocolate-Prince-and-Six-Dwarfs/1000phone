@@ -1,5 +1,6 @@
 <template>
     <div class="homePage">
+        <!-- 上方导航 -->
         <div class="homeTopNav">
             <div class="homeClock">
                 <img class="homeClockImg" src="../assets/img/shouye/clock.png" alt="">
@@ -13,12 +14,71 @@
                 <div class="homeScanText">邀请码</div>
             </div>
         </div>
+
+        <!-- 首页主体 -->
+        <div class="homeMainBody">
+            <!-- 搜索框 -->
+            <div class="homeSearch">
+                <div v-if="showSearchImg" class="homeSearchImgdiv">
+                    <img class="homeSearchImg" src="../assets/img/shouye/search.png">
+                </div>
+                <input id="homeSearchInput" class="homeSearchInput" placeholder="找应用" @input="onInputHideOrShowImg()"/>
+            </div>
+            <!-- 图片 -->
+            <div class="homeMainImgDiv">
+                <img class="homeMainImg" src="../assets/img/shouye/homeImg.jpg" alt="">
+            </div>
+            <!-- 首页选项 -->
+            <div class="homeMainOptions">
+
+            </div>
+        </div>
+
+        <!-- 下方导航 -->
+        <v-navbar :navIndex="0"></v-navbar>
     </div>
 </template>
 
 <script>
+import NavBar from './compontentPage/NavBar'
 export default {
-
+    data(){
+        return {
+            index: 0,
+            showSearchImg: true,
+            menu: {},
+            RegulationMenu: [],
+            OfficeApplications: [],
+            TeachingApplication: [],
+        }
+    },
+    created() {
+        this.getMenuData()
+    },
+    components: {
+        'v-navbar': NavBar
+    },
+    methods: {
+        onInputHideOrShowImg: function(){
+            var inputValue = document.getElementById('homeSearchInput').value
+            if(inputValue == null || inputValue == ""){
+                this.showSearchImg = true
+            }else{
+                this.showSearchImg = false
+            }
+        },
+        getMenuData: function(){
+            this.$ajax({
+                methods: 'get',
+                url: '../../static/homeMainOptions.json'
+            }).then(res => {
+                this.menu = res.data
+                console.log(this.menu)
+            }).catch(error => {
+                console.log(error)
+            })
+        }
+    },
 }
 </script>
 
@@ -52,10 +112,49 @@ export default {
     height: 20px;
 }
 .homeTitleText{
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
 }
 .homeScanText{
     font-size: 10px;
+}
+.homeMainBody{
+    width: 100%;
+}
+.homeSearch{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+.homeSearchImgdiv{
+    position: absolute;
+}
+.homeSearchImg{
+    position: relative;
+    right: 17px;
+    width: 25px;
+    height: 25px;
+}
+.homeSearchInput{
+    width: 100%;
+    height: 36px;
+    border: none;
+    border-radius: 30px;
+    background-color: #f4f4f4;
+    font-size: 15px;
+    outline: none;
+    text-align: center;
+}
+input::-webkit-input-placeholder{
+    position: relative;
+    left: 17px;
+}
+.homeMainImg{
+    width: 100%;
+    height: calc(100wd * 372 / 855);
 }
 </style>
