@@ -2,116 +2,121 @@
   <div class="allpage">
 
      <!-- 页面头部 -->
-    <div class="header">
+    <div class="header1">
+      <div class="header">
         <span class="title">消息</span>
         <div class="options">
           <span>+</span>
         </div>
-      <div class="line"></div>
+        <div class="line"></div>
+      </div>
     </div>
 
-    <!-- 搜索框 -->
-    <div class="searchBar">
-      <img class="searchImg" src="../assets/img/xiaoxi/3.png" alt=""/>
-      <span class="searchText">搜索</span>
-    </div>
 
-    <!-- 页面主体 -->
-    <div class="message">
-      <div class="message-item">
-        <img class="message-item-pic" src="../assets/img/xiaoxi/ic_message_contact.png" alt=""/>
-        <span class="message-item-name">通讯录</span>
+    <div class="pageMain">
+      <!-- 搜索框 -->
+      <div class="searchBar">
+        <img class="searchImg" src="../assets/img/xiaoxi/3.png" alt=""/>
+        <span class="searchText">搜索</span>
       </div>
 
-      <div class="message-item">
-        <img class="message-item-pic" src="../assets/img/xiaoxi/ic_message_contact.png" alt=""/>
-        <span class="message-item-name">收件箱</span>
-      </div>
+      <!-- 页面主体 -->
+      <div class="message">
+        <div class="message-item">
+          <img class="message-item-pic" src="../assets/img/xiaoxi/ic_message_contact.png" alt=""/>
+          <span class="message-item-name">通讯录</span>
+        </div>
 
-      <div class="class-item">
-        <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
-        <div class="class-item-info">
-          <span class="class-item-name">软件工程综合实习与技能实习</span>
-          <span class="class-item-time">6小时前</span>
+        <div class="message-item">
+          <img class="message-item-pic" src="../assets/img/xiaoxi/ic_message_contact.png" alt=""/>
+          <span class="message-item-name">收件箱</span>
+        </div>
 
-          <div class="class-teacher">
-            <span class="class-teacher-info">王兵:[签到]</span>
+        <div class="class-item">
+          <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
+          <div class="class-item-info">
+            <span class="class-item-name">软件工程综合实习与技能实习</span>
+            <span class="class-item-time">6小时前</span>
+
+            <div class="class-teacher">
+              <span class="class-teacher-info">王兵:[签到]</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="class-item">
+          <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
+          <div class="class-item-info">
+            <span class="class-item-name">Linux操作系统基础</span>
+            <span class="class-item-time">06-17</span>
+
+            <div class="class-teacher">
+              <span class="class-teacher-info">罗琴:[课堂测试6]</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="class-item">
+          <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
+          <div class="class-item-info">
+            <span class="class-item-name">2020大数据处理技术</span>
+            <span class="class-item-time">06-13</span>
+
+            <div class="class-teacher">
+              <span class="class-teacher-info">赖俊良:[实验7]</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="class-item">
+          <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
+          <div class="class-item-info">
+            <span class="class-item-name">2020大数据处理技术</span>
+            <span class="class-item-time">06-13</span>
+
+            <div class="class-teacher">
+              <span class="class-teacher-info">赖俊良:[实验7]</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="class-item">
+          <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
+          <div class="class-item-info">
+            <span class="class-item-name">2020大数据处理技术</span>
+            <span class="class-item-time">06-13</span>
+
+            <div class="class-teacher">
+              <span class="class-teacher-info">赖俊良:[实验7]</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="class-item">
+          <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
+          <div class="class-item-info">
+            <span class="class-item-name">2020大数据处理技术</span>
+            <span class="class-item-time">06-13</span>
+
+            <div class="class-teacher">
+              <span class="class-teacher-info">赖俊良:[实验7]</span>
+            </div>
+
           </div>
 
         </div>
 
       </div>
-
-      <div class="class-item">
-        <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
-        <div class="class-item-info">
-          <span class="class-item-name">Linux操作系统基础</span>
-          <span class="class-item-time">06-17</span>
-
-          <div class="class-teacher">
-            <span class="class-teacher-info">罗琴:[课堂测试6]</span>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="class-item">
-        <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
-        <div class="class-item-info">
-          <span class="class-item-name">2020大数据处理技术</span>
-          <span class="class-item-time">06-13</span>
-
-          <div class="class-teacher">
-            <span class="class-teacher-info">赖俊良:[实验7]</span>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="class-item">
-        <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
-        <div class="class-item-info">
-          <span class="class-item-name">2020大数据处理技术</span>
-          <span class="class-item-time">06-13</span>
-
-          <div class="class-teacher">
-            <span class="class-teacher-info">赖俊良:[实验7]</span>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="class-item">
-        <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
-        <div class="class-item-info">
-          <span class="class-item-name">2020大数据处理技术</span>
-          <span class="class-item-time">06-13</span>
-
-          <div class="class-teacher">
-            <span class="class-teacher-info">赖俊良:[实验7]</span>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="class-item">
-        <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
-        <div class="class-item-info">
-          <span class="class-item-name">2020大数据处理技术</span>
-          <span class="class-item-time">06-13</span>
-
-          <div class="class-teacher">
-            <span class="class-teacher-info">赖俊良:[实验7]</span>
-          </div>
-
-        </div>
-
-      </div>
-
     </div>
 
     <!-- 底部导航栏 -->
@@ -136,12 +141,19 @@
     width: 100%;
     height: 100%;
   }
+  .header1{
+    width: 100%;
+    height: 60px;
+    
+  }
   .header{
     width: 100%;
     height: 60px;
     display: flex;
     justify-content: center;
-    position: relative;
+    position: fixed;
+    background-color: white;
+    z-index: 999;
   }
   .title{
     margin-top: 18px;
@@ -165,11 +177,15 @@
     margin-top: 60px;
   }
 
+  .pageMain{
+    width: 100%;
+    height: 1000px;
+  }
   .searchBar{
     height: 38px;
     text-align: center;
     background-color: #F8F8FF;
-    border-radius: 15px;
+    border-radius: 40px;
     margin-top: 13px;
     margin-right: 15px;
     margin-left: 15px;
@@ -179,6 +195,7 @@
   .searchImg{
     width: 15px;
     height: 15px;
+    margin-top: 10px;
   }
   .searchText{
     color: #D3D3D3;
