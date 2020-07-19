@@ -18,11 +18,11 @@
         <!-- 首页主体 -->
         <div class="homeMainBody">
             <!-- 搜索框 -->
-            <div class="homeSearch">
-                <div v-if="showSearchImg" class="homeSearchImgdiv">
+            <div class="homeSearch" @click="clickToSearch()">
+                <div class="homeSearchImgDiv">
                     <img class="homeSearchImg" src="../assets/img/shouye/search.png">
                 </div>
-                <input id="homeSearchInput" class="homeSearchInput" placeholder="找应用" @input="onInputHideOrShowImg()"/>
+                <input id="homeSearchInput" class="homeSearchInput" placeholder="找应用"/>
             </div>
             <!-- 图片 -->
             <div class="homeMainImgDiv">
@@ -58,7 +58,7 @@ export default {
     data(){
         return {
             index: 0,
-            showSearchImg: true,
+            // showSearchImg: true, //v-if="showSearchImg"
             menu: {}
         }
     },
@@ -69,14 +69,18 @@ export default {
         'v-navbar': NavBar
     },
     methods: {
-        onInputHideOrShowImg: function(){
-            var inputValue = document.getElementById('homeSearchInput').value
-            if(inputValue == null || inputValue == ""){
-                this.showSearchImg = true
-            }else{
-                this.showSearchImg = false
-            }
+        clickToSearch: function(){
+            this.$router.push({ path: 'search' })
         },
+        // onInputHideOrShowImg: function(){
+        //     var inputValue = document.getElementById('homeSearchInput').value
+        //     if(inputValue == null || inputValue == ""){
+        //         this.showSearchImg = true
+        //     }else{
+        //         this.showSearchImg = false
+        //     }
+        //     // @input="onInputHideOrShowImg()
+        // },
         getMenuData: function(){
             this.$ajax({
                 methods: 'get',
@@ -93,12 +97,17 @@ export default {
 </script>
 
 <style>
+*{
+    /* font-family: KaiTi; */
+    font-family: Microsoft JhengHei;
+}
 .homeTopNav{
     z-index: 9999;
     position: fixed;
     background-color: #ffffff;
     top: 0px;
     width: 100%;
+    height: 65px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -116,10 +125,6 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.homeTopNav{
-    width: 100%;
-    height: 65px;
 }
 .homeClockImg, .homeTitleImg, .homeScanImg{
     width: 20px;
@@ -145,7 +150,7 @@ export default {
     justify-content: center;
     margin: 10px;
 }
-.homeSearchImgdiv{
+.homeSearchImgDiv{
     position: absolute;
 }
 .homeSearchImg{
