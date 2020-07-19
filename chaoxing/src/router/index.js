@@ -5,6 +5,7 @@ import Information from '@/components/information'
 import Note from '@/components/note'
 import My from '@/components/my'
 import MyAccount from '@/components/myAccount'
+import Recently from '@/components/recently'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/myAccount',
       name: 'MyAccount',
       component: MyAccount
+    },
+    {
+      path: '/recently',
+      name: 'Recently',
+      component: Recently
     },
   ]
 })
