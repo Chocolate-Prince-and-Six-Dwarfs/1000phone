@@ -1,0 +1,56 @@
+{
+    "RegulationMenu":[
+        {
+            "title": "答题战\"疫\"",
+            "picPath": "../assets/img/shouye/ic_dynamic_notebook.png"
+        },
+        {
+            "title": "疫情防控记录表",
+            "picPath": "../assets/img/shouye/ic_dynamic_notebook.png"
+        },
+        {
+            "title": "每日健康统计",
+            "picPath": "../assets/img/shouye/ic_dynamic_notebook.png"
+        },
+        {
+            "title": "新型肺炎防疫专题",
+            "picPath": "../assets/img/shouye/ic_dynamic_notebook.png"
+        },
+        {
+            "title": "疫情动态",
+            "picPath": "../assets/img/shouye/ic_dynamic_notebook.png"
+        },
+        {
+            "title": "教育系统防控信息",
+            "picPath": "../assets/img/shouye/ic_dynamic_notebook.png"
+        }
+    ],
+    "OfficeApplications":[
+        {
+            "title": "通知",
+            "picPath": "../assets/img/shouye/ic_dynamic_notebook.png"
+        },
+        {
+            "title": "请假",
+            "picPath": "../assets/img/shouye/ic_dynamic_notebook.png"
+        },
+        {
+            "title": "销假",
+            "picPath": "../assets/img/shouye/ic_dynamic_notebook.png"
+        }
+    ],
+    "TeachingApplication":[
+        {
+            "title": "每日一书",
+            "picPath": "../assets/img/shouye/ic_dynamic_notebook.png"
+        },
+        {
+            "title": "待办事项",
+            "picPath": "../assets/img/shouye/ic_dynamic_notebook.png"
+        },
+        {
+            "title": "学生画像",
+            "picPath": "../assets/img/shouye/ic_dynamic_notebook.png"
+        }
+    ]
+}
