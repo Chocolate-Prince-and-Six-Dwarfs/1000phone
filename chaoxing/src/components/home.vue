@@ -3,7 +3,7 @@
         <!-- 上方导航 -->
         <div class="homeTopNav">
             <div class="homeClock">
-                <img class="homeClockImg" src="../assets/img/shouye/clock.png" alt="">
+                <router-link to='recently'><img class="homeClockImg" src="../assets/img/shouye/clock.png" alt=""></router-link>
             </div>
             <div class="homeTitle">
                 <div class="homeTitleText">西南石油大学（学生）</div>
@@ -30,7 +30,19 @@
             </div>
             <!-- 首页选项 -->
             <div class="homeMainOptions">
-
+                <div>
+                    <div class="MenuItem" v-for="(menuItem,indexMe) in menu" :key="indexMe">
+                        <div class="MenuItemTitle">
+                            <div class="MenuItemTitleMargin">{{ menuItem.MenuTitle }}</div>
+                        </div>
+                        <div class="optionsItemDiv">
+                            <div class="optionsItem" v-for="(opItem,indexOp) in menuItem.MenuOptions" :key="indexOp">
+                                <img class="optionsItemImg" :src="opItem.picPath" alt="">
+                                <div class="optionsItemTitle">{{ opItem.title }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -41,6 +53,7 @@
 
 <script>
 import NavBar from './compontentPage/NavBar'
+import img1 from "@/assets/img/shouye/ic_dynamic_notebook.png";
 export default {
     data(){
         return {
@@ -72,8 +85,8 @@ export default {
                 methods: 'get',
                 url: '../../static/homeMainOptions.json'
             }).then(res => {
-                this.menu = res.data
-                console.log(this.menu)
+                this.menu = res.data.MainMenu
+                console.log(this.menu[0].MenuOptions[0].title)
             }).catch(error => {
                 console.log(error)
             })
@@ -156,5 +169,52 @@ input::-webkit-input-placeholder{
 .homeMainImg{
     width: 100%;
     height: calc(100wd * 372 / 855);
+}
+.homeMainOptions{
+    width: 100%;
+}
+.MenuItem{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.optionsItemDiv{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.optionsItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+}
+.MenuItemTitle{
+    background-color: #f9f9f9;
+    font-size: 15px;
+    color: #9b9b9b;
+    height: 35px;
+    line-height: 35px;
+}
+.optionsItemImg{
+    width: 30px;
+    height: 30px;
+}
+.optionsItemTitle{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 10px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.MenuItemTitleMargin{
+    margin-left: 5px;
 }
 </style>
