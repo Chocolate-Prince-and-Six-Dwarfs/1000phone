@@ -6,6 +6,7 @@ import Note from '@/components/note'
 import My from '@/components/my'
 import MyAccount from '@/components/myAccount'
 import Recently from '@/components/recently'
+import search from '@/components/search'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/recently',
       name: 'Recently',
       component: Recently
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: search
     },
   ]
 })
