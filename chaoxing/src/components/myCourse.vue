@@ -8,7 +8,7 @@
       <img class="search_Img" src="../assets/img/xiaoxi/3.png" alt=""/>
       <span class="search_Text">搜索</span>
     </div>
-    <div class="course_list" v-for="(citem,cindex) in course" :key="index">
+    <div class="course_list" v-for="(citem,cindex) in course" :key="cindex">
       <div class="course_item">
         <div class="course_info">
           <img class="course_img" :src="citem.img" />
