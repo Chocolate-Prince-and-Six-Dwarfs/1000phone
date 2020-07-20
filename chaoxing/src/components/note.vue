@@ -253,28 +253,28 @@ export default {
     .search-box
     {
         margin: 10px 18px;
-        height: 38px;
+        height: 32px;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        border-radius: 18px;
+        border-radius: 14px;
         background-color: #f4f7f7;
     }
     .search-img
     {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
         margin-right: 4px;
     }
     .search-text
     {
-        font-size: 18px;
+        font-size: 14px;
         color: #ced1d1;
     }
     .add-box
     {
-        height: 54px;
+        height: 50px;
         background-color: white;
         border-bottom: 10px solid #f4f7f7;
         display: flex;
