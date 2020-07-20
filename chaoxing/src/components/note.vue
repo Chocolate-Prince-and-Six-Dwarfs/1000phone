@@ -9,7 +9,7 @@
             <img class="editor-img" src="../assets/img/biji/edit.png">
           </div>
       </div>
-      <div class="search-box">
+      <div class="search-box" @click="search">
           <img class="search-img" src="../assets/img/biji/search.png" alt="">
           <span class="search-text">搜索</span>
       </div>
@@ -185,6 +185,14 @@ export default {
         changeGroup: function (groupName) {
             this.currentGroup = groupName;
             this.changeShow();
+        },
+        search: function () {
+            this.$router.push({
+                    path: "/search",
+                    query: {
+                        title: '找笔记'
+                    }
+            });
         }
     },
     components: {
