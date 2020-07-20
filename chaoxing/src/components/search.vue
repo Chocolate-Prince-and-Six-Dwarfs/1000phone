@@ -64,7 +64,7 @@ export default {
         toPre: function(){
             this.$router.go(-1)
         },
-        checkInputValue: function(){
+        checkInputValue: function(){    //检查搜索框内容是否为空
             var inputValue = document.getElementById('searchInput').value
             if( inputValue == null || inputValue == "" ){
                 this.searchResultIsShow = false
@@ -74,7 +74,7 @@ export default {
                 return inputValue
             }
         },
-        enterToSearch: function(){
+        enterToSearch: function(){  //搜索（功能未实现）及保存搜索历史
             var inputValue = this.checkInputValue()
             if(inputValue == null || inputValue == ""){
                 return
@@ -85,7 +85,7 @@ export default {
                 localStorage.setItem('history',JSON.stringify(this.historyList))
             }
         },
-        showOrHideHistory: function(){
+        showOrHideHistory: function(){  //是否展示搜素历史
             var inputValue = this.checkInputValue()
             if(inputValue == null || inputValue == ""){
                 this.imgChaChaIsShow = false
@@ -93,7 +93,7 @@ export default {
                 this.imgChaChaIsShow = true
             }
         },
-        clearHistoryList: function(){
+        clearHistoryList: function(){   //清空搜索历史
             this.historyList = []
             localStorage.setItem('history',JSON.stringify(this.historyList))
             this.historyList = JSON.parse(localStorage.getItem('history'))
@@ -101,12 +101,12 @@ export default {
         getLocalHistoryList: function(){
             this.historyList = JSON.parse(localStorage.getItem('history'))
         },
-        clearInputText: function(){
+        clearInputText: function(){ //清空搜索框内容
             this.searchResultIsShow = false
             this.imgChaChaIsShow = false
             document.getElementById('searchInput').value = ""
         },
-        historyClickSearch: function(value){
+        historyClickSearch: function(value){    //点击某一个搜索历史，将内容填充到搜索框
             var dom = document.getElementById('searchInput')
             this.searchResultIsShow = true
             this.imgChaChaIsShow = true
