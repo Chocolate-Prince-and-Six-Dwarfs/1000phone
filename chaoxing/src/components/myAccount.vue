@@ -14,28 +14,28 @@
       <div class="account-main">
           <div class="avater">
               <span class="main-text">头像</span>
-              <img class="avater-pic" src="../assets/img/wo/default_head.png"/>
-              <img class="goto" src="../assets/img/jt2.png"/>
+              <img @click="showCart" class="avater-pic" src="../assets/img/wo/default_head.png"/>
+              <img @click="showCart" class="goto" src="../assets/img/jt2.png"/>
           </div>
           <div class="name">
               <span class="main-text">姓名</span>
-              <div class="name-text">陶老板</div>
+              <div class="name-text">{{name}}</div>
           </div>
           <div class="sex">
               <span class="main-text">性别</span>
-              <div class="textinfo">男</div>
+              <div class="textinfo">{{sex}}</div>
               <img class="goto" src="../assets/img/jt2.png"/>
           </div>
           <div class="description">
               <span class="main-text">描述</span>
-              <div class="textinfo">陶老板牛的啊</div>
+              <div class="textinfo">{{description}}</div>
               <img class="goto" src="../assets/img/jt2.png"/>
           </div>
           <div class="phoneNum">
               <div class="phoneNum-line"></div>
               <div class="phoneNum-text">
                   <span class="main-text">手机号</span>
-                  <div class="textinfo" id="phoneinfo">88888888</div>
+                  <div class="textinfo" id="phoneinfo">{{phoneNum}}</div>
                   <img class="goto" src="../assets/img/jt2.png"/>
               </div>
           </div>
@@ -47,14 +47,14 @@
                   </div>
               </div>
               <div class="work-text">
-                  <div>西南石油大学<br/>学号/工号：000000000001</div> 
+                  <div>西南石油大学<br/>学号/工号：{{workinfo}}</div> 
               </div>
           </div>
           <div class="wallet">
               <div class="wallet-line"></div>
               <div class="wallet-text">
                   <span class="main-text">钱包</span>
-                  <div class="wallet-info">0元</div>
+                  <div class="wallet-info">{{walletinfo}}元</div>
                   <img class="goto" src="../assets/img/jt2.png"/>
               </div>
           </div>
@@ -66,15 +66,54 @@
               </div>
           </div>
       </div>
+
       <div class="account-bottom">
           <button class="logout">退出登录</button>
+      </div>
+
+      <div class="avater-chenge" :class="showFlag ? 'show' : 'hidden'">
+          <div class="darkbg" @click="hiddenCart"></div>
+             <div class="cart-content">
+
+             <div class="cart-main">
+                <span class="cart-text">拍照</span>
+            </div>
+            <div class="cart-main">
+                <span class="cart-text">从相册选择</span>
+            </div>
+            <div class="cart-main">
+                <span class="cart-text">查看原图</span>
+            </div>
+            <div>
+                <div class="cancel-line"></div>
+                <div class="cancel-text1" @click="hiddenCart">取消</div>
+            </div>
+          </div>  
       </div>
   </div>
 </template>
 
 <script>
 export default {
-
+    data(){
+        return{
+            showFlag: false,
+            name:'陶老板',
+            sex:'男',
+            description:'陶老板牛的啊',
+            phoneNum:'88888888',
+            walletinfo: 0 ,
+            workinfo:'000000000001'
+        }
+    },
+    methods:{
+        showCart:function(){
+        this.showFlag = true;
+      },
+      hiddenCart:function(){
+        this.showFlag = false;
+      }
+    }
 }
 </script>
 
@@ -239,4 +278,44 @@ export default {
     #phoneinfo{
         margin-left: 15px !important;
     }
+    .darkbg{
+    height: calc(100% - 182px);
+    width: 100%;
+    background-color: rgba(0,0,0,0.6);
+  }
+    .cart-content{
+    width: 100%;
+    height: 182px;
+    background-color: #fff;
+  }
+    .avater-chenge{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+    .show{
+    display: block;
+  }
+  .hidden{
+    display: none;
+  }
+  .cart-main{
+        width: 100%;
+        height:45px;
+        border-bottom: 1px solid #dddddd;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+  }
+  .cancel-line{
+        width:100%;
+        height:7px;
+        background-color:#f4f7f7;
+  }
+  .cancel-text1{
+      text-align: center;
+      margin-top:8px;
+  }
 </style>
