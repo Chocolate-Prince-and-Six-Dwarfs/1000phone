@@ -7,39 +7,70 @@
             </div>
             <div class="searchTitle">
                 <div class="searchTitleText">
-                    找应用
+                    {{ this.$route.query.title }}
                 </div>
             </div>
         </div>
 
         <div class="searchMainBody">
             <!-- 搜索框 -->
-            <div class="searchDiv" @click="clickToSearch()">
+            <div class="searchDiv">
                 <div class="searchDivImgDiv">
                     <img class="searchDivImg" src="../assets/img/shouye/search.png">
                 </div>
-                <input id="searchInput" class="searchInput">
+                <input id="searchInput" class="searchInput" @input="enterToSearch()" @keyup.enter="enterToSearch()">
             </div>
-            <!-- 历史记录 -->
-            <div class="searchHistory">
-                <div class="searchHistoryTitle">最近搜索</div>
-                <img class="searchHistoryImg" src="../assets/img/shouye/delete.png">
+
+            <div v-if="!searchResultIsShow" class="searchHistoryBody">
+                <!-- 历史记录 -->
+                <div class="searchHistory">
+                    <div class="searchHistoryTitle">最近搜索</div>
+                    <img class="searchHistoryImg" src="../assets/img/shouye/delete.png">
+                </div>
+                <div class="taoLaoBanWuDi">
+                    陶老板专属搜索界面<br>
+                    😃😃😃
+                </div>
             </div>
-            <div class="taoLaoBanWuDi">
-                陶老板专属搜索界面<br>
-                😃😃😃
+            <div v-if="searchResultIsShow" class="searchResultBody">
+                <div class="searchResult">
+                    暂无搜索结果<br>
+                    😶😶😶
+                </div>
             </div>
         </div>
+
+        
   </div>
 </template>
 
 <script>
 export default {
-  methods: {
+    data(){
+        return {
+            searchResultIsShow: false,
+            historyList: []
+        }
+    },
+    methods: {
         toPre: function(){
             this.$router.go(-1)
+        },
+        checkInputValue: function(){
+            var inputValue = document.getElementById('searchInput').value
+            if( inputValue == null || inputValue == "" ){
+                this.searchResultIsShow = false
+            }else{
+                this.searchResultIsShow = true
+            }
+        },
+        enterToSearch: function(){
+            this.checkInputValue()
+        },
+        showOrHideHistory: function(){
+            this.checkInputValue()
         }
-  },
+    }
 };
 </script>
 <style scoped>
@@ -103,6 +134,9 @@ export default {
     width: 20px;
     height: 20px;
 }
+.searchHistoryBody, .searchResultBody{
+    width: 100%;
+}
 .searchHistory{
     width: 100%;
     border-top: 1px solid #dddddd;
@@ -114,6 +148,12 @@ export default {
     align-items: center;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+.searchResult{
+    text-align: center;
+    font-size: 12px;
+    color: #cfcfcf;
+    margin-top: 100px;
 }
 .searchHistoryTitle{
     font-size: 15px;

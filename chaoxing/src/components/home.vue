@@ -18,11 +18,11 @@
         <!-- 首页主体 -->
         <div class="homeMainBody">
             <!-- 搜索框 -->
-            <div class="homeSearch" @click="clickToSearch()">
-                <div class="homeSearchImgDiv">
+            <div class="homeSearch" @click="clickToSearch('找应用')">
+                <div v-if="showSearchImg" class="homeSearchImgDiv">
                     <img class="homeSearchImg" src="../assets/img/shouye/search.png">
                 </div>
-                <input id="homeSearchInput" class="homeSearchInput" placeholder="找应用"/>
+                <input id="homeSearchInput" class="homeSearchInput" @input="onInputHideOrShowImg()" placeholder="找应用"/>
             </div>
             <!-- 图片 -->
             <div class="homeMainImgDiv">
@@ -58,7 +58,7 @@ export default {
     data(){
         return {
             index: 0,
-            // showSearchImg: true, //v-if="showSearchImg"
+            showSearchImg: true,
             menu: {}
         }
     },
@@ -69,18 +69,22 @@ export default {
         'v-navbar': NavBar
     },
     methods: {
-        clickToSearch: function(){
-            this.$router.push({ path: 'search' })
+        clickToSearch: function(title){
+            this.$router.push({ 
+                path: '/search',
+                query: {
+                    title: title
+                }
+            })
         },
-        // onInputHideOrShowImg: function(){
-        //     var inputValue = document.getElementById('homeSearchInput').value
-        //     if(inputValue == null || inputValue == ""){
-        //         this.showSearchImg = true
-        //     }else{
-        //         this.showSearchImg = false
-        //     }
-        //     // @input="onInputHideOrShowImg()
-        // },
+        onInputHideOrShowImg: function(){
+            var inputValue = document.getElementById('homeSearchInput').value
+            if(inputValue == null || inputValue == ""){
+                this.showSearchImg = true
+            }else{
+                this.showSearchImg = false
+            }
+        },
         getMenuData: function(){
             this.$ajax({
                 methods: 'get',
@@ -100,6 +104,11 @@ export default {
 *{
     /* font-family: KaiTi; */
     font-family: Microsoft JhengHei;
+}
+.homePage{
+    width: 100%;
+    /* overflow:auto; */
+    /* overflow-x: hidden; */
 }
 .homeTopNav{
     z-index: 9999;
