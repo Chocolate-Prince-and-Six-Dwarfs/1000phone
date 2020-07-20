@@ -13,7 +13,7 @@
     </div>
     <div class="reD_message">{{message}}</div>
     <div class="reD_bottom">
-      <div class="reD_dancer" :style="{'margin-top': d_top + 'px', 'margin-left': d_left + 'px'}" @click="dancer">陶老板</div>
+      <div class="reD_dancer" :style="{'margin-top': d_top + '%', 'margin-left': d_left + '%'}" @click="dancer">陶老板</div>
     </div>
   </div>
 </template>
@@ -24,8 +24,8 @@
       return {
         message_list: ['哎，我跑了', '没逮到', '来抓我啊', '还是没逮着'],
         message: '',
-        d_top: 0,
-        d_left: 0,
+        d_top: 10,
+        d_left: 10,
       }
     },
 
@@ -36,8 +36,8 @@
 
       dancer: function() {
         var tmp = parseInt(Math.random() * 4);
-        this.d_top = Math.random() * 300;
-        this.d_left = Math.random() * 300;
+        this.d_top = Math.random() * 80;
+        this.d_left = Math.random() * 80;
         this.message = this.message_list[tmp];
       }
     }
