@@ -6,29 +6,30 @@
     </div>
     <div style="width: 100%; height: 40px;"></div>
     <div class="re_middle">
-      <div class="re_tip" :style="{display: tip_disp}">添加成功</div>
+      <div class="re_tip" :style="{display: tip_disp}">{{tip_text}}</div>
       <div class="re_nav">
         <span class="re_nav_text">常用</span>
       </div>
-      <div class="re_item" v-for="(aitem, aindex) in always" :key="aindex">
+      <div class="re_item" v-for="(aitem, aindex) in always" :key="aindex" @click="toDetail">
         <img class="re_item_img" :src="aitem.img">
         <div class="re_item_word">
           <span class="re_item_name">{{aitem.name}}</span>
           <span class="re_item_text" v-if="aitem.text">{{aitem.text}}</span>
           <div class="re_item_icon" v-if="aitem.icon">{{aitem.icon}}</div>
         </div>
+        <button class="re_item_button" @click="out(aindex)">移出</button>
       </div>
       <div class="re_nav">
         <span class="re_nav_text">最近使用</span>
       </div>
-      <div class="re_item" v-for="(oitem, oindex) in once" :key="oindex + 100">
+      <div class="re_item" v-for="(oitem, oindex) in once" :key="oindex + 100" @click="toDetail">
         <img class="re_item_img" :src="oitem.img">
         <div class="re_item_word">
           <span class="re_item_name">{{oitem.name}}</span>
           <span class="re_item_text" v-if="oitem.text">{{oitem.text}}</span>
           <div class="re_item_icon" v-if="oitem.icon">{{oitem.icon}}</div>
         </div>
-        <button class="re_item_button" @click="add(oindex)">{{stat}}</button>
+        <button class="re_item_button" @click="add(oindex)">+常用</button>
       </div>
     </div>
     <div class="re_bottom">
@@ -133,7 +134,7 @@
             icon: '课程',
           },
         ],
-        stat: '+常用',
+        tip_text: '',
         tip_disp: 'none',
       }
     },
@@ -143,13 +144,28 @@
         this.$router.replace('/');
       },
 
+      toDetail: function() {
+        this.$router.replace('/recentlyDetail');
+      },
+
       add: function(index) {
         this.always.push(this.once[index]);
         this.once.splice(index, 1);
+        this.tip_text = '添加成功';
         this.tip_disp = 'block';
         setTimeout(() => {
           this.tip_disp = 'none';
-        }, 1000);
+        }, 500);
+      },
+
+      out: function(index) {
+        this.once.push(this.always[index]);
+        this.always.splice(index, 1);
+        this.tip_text = '移出成功';
+        this.tip_disp = 'block';
+        setTimeout(() => {
+          this.tip_disp = 'none';
+        }, 500);
       }
     }
   }

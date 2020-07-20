@@ -5,8 +5,10 @@ import Information from '@/components/information'
 import Note from '@/components/note'
 import My from '@/components/my'
 import MyAccount from '@/components/myAccount'
+import MyCourse from '@/components/myCourse'
 import Recently from '@/components/recently'
 import search from '@/components/search'
+import RecentlyDetail from '@/components/recentlyDetail'
 
 Vue.use(Router)
 
@@ -37,6 +39,11 @@ export default new Router({
       name: 'MyAccount',
       component: MyAccount
     },
+	{
+      path: '/myCourse',
+      name: 'MyCourse',
+      component: MyCourse
+    },
     {
       path: '/recently',
       name: 'Recently',
@@ -47,5 +54,10 @@ export default new Router({
       name: 'search',
       component: search
     },
+    {
+      path: '/recentlyDetail',
+      name: 'RecentlyDetail',
+      component: RecentlyDetail
+    }
   ]
 })

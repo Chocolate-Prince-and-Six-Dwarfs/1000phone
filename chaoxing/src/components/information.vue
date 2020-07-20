@@ -3,19 +3,32 @@
 
      <!-- 页面头部 -->
     <div class="header1">
-      <div class="header">
+      <div class="messageheader">
         <span class="title">消息</span>
-        <div class="options">
+        <div @click="ShowMenu" class="options">
           <span>+</span>
+        </div>
+        <div :class="showMenu ? 'show' : 'hidden'" class="menu-wrapper">
+          <div class="menu-content">
+            <div class="menu-item">
+              <span class="menu-item">新建群聊</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item">建文件夹</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item">批量编辑</span>
+            </div>
+          </div>
         </div>
         <div class="line"></div>
       </div>
     </div>
 
 
-    <div class="pageMain">
+    <div @click="HiddenMenu" class="pageMain">
       <!-- 搜索框 -->
-      <div class="searchBar">
+      <div class="searchBar" @click="clickToSearch('找课程')">
         <img class="searchImg" src="../assets/img/xiaoxi/3.png" alt=""/>
         <span class="searchText">搜索</span>
       </div>
@@ -35,7 +48,10 @@
         <div class="class-item">
           <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
           <div class="class-item-info">
-            <span class="class-item-name">软件工程综合实习与技能实习</span>
+            <div class="class-item-name">
+              <span >软件工程综合实习与技能实习</span>
+            </div>
+
             <span class="class-item-time">6小时前</span>
 
             <div class="class-teacher">
@@ -49,7 +65,9 @@
         <div class="class-item">
           <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
           <div class="class-item-info">
-            <span class="class-item-name">Linux操作系统基础</span>
+            <div class="class-item-name">
+              <span >Linux操作系统基础</span>
+            </div>
             <span class="class-item-time">06-17</span>
 
             <div class="class-teacher">
@@ -63,7 +81,9 @@
         <div class="class-item">
           <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
           <div class="class-item-info">
-            <span class="class-item-name">2020大数据处理技术</span>
+            <div class="class-item-name">
+              <span >2020大数据处理技术</span>
+            </div>
             <span class="class-item-time">06-13</span>
 
             <div class="class-teacher">
@@ -77,7 +97,9 @@
         <div class="class-item">
           <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
           <div class="class-item-info">
-            <span class="class-item-name">2020大数据处理技术</span>
+            <div class="class-item-name">
+              <span >2020大数据处理技术</span>
+            </div>
             <span class="class-item-time">06-13</span>
 
             <div class="class-teacher">
@@ -91,7 +113,9 @@
         <div class="class-item">
           <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
           <div class="class-item-info">
-            <span class="class-item-name">2020大数据处理技术</span>
+            <div class="class-item-name">
+              <span >2020大数据处理技术</span>
+            </div>
             <span class="class-item-time">06-13</span>
 
             <div class="class-teacher">
@@ -105,7 +129,9 @@
         <div class="class-item">
           <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
           <div class="class-item-info">
-            <span class="class-item-name">2020大数据处理技术</span>
+            <div class="class-item-name">
+              <span >2020大数据处理技术</span>
+            </div>
             <span class="class-item-time">06-13</span>
 
             <div class="class-teacher">
@@ -131,9 +157,29 @@
   export default {
     data(){
         return {
-            index: 0,
-            }
+          index: 0,
+          showMenu:false
+        }
     },
+
+    methods:{
+      clickToSearch: function(title){
+          this.$router.push({
+              path: '/search',
+              query: {
+                  title: title
+              }
+          })
+      },
+
+      ShowMenu:function(){
+        this.showMenu = !this.showMenu;
+      },
+      HiddenMenu:function(){
+        this.showMenu = false;
+      }
+    },
+
     components:{
       'v-navbar':navBar
     }
@@ -149,7 +195,7 @@
     width: 100%;
     height: 60px;
   }
-  .header{
+  .messageheader{
     width: 100%;
     height: 60px;
     display: flex;
@@ -239,6 +285,11 @@
   }
   .class-item-name{
     margin-left: 14px;
+    width: calc(100% - 60px);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .class-item-time{
     color: #BEBEBE;
@@ -250,5 +301,28 @@
     color: #BEBEBE;
     margin-top: 10px;
     margin-left: 15px;
+  }
+
+  .show{
+    display: block;
+  }
+  .hidden{
+    display: none;
+  }
+
+  .menu-wrapper{
+    position: absolute;
+    right: 5px;
+    top: 60px;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px #999999;
+  }
+  .menu-content{
+    display: flex;
+    flex-direction: column;
+
+  }
+  .menu-item{
+    margin: 10px;
   }
 </style>

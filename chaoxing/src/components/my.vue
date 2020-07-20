@@ -1,58 +1,66 @@
 <template>
   <div class="my">
+    <!-- 头部栏 -->
     <span class="my-head">我</span>
+    <!-- 个人信息栏 -->
+    <!-- 跳转到myAccount页面 -->
     <div class="my-wrapper">
-      <div class="my-info">
-        <img class="my-photo" src="../assets/img/wo/default_head.png"/>
-        <span class="my-name">我是陶老板</span>
-      </div>
-      <div class="goto-button">
-        <router-link to="/myAccount">></router-link>
-      </div>
+      <router-link to="/myAccount">
+        <div class="my-info">
+          <img class="my-photo" src="../assets/img/wo/default_head.png"/>
+          <span class="my-name">我是陶老板</span>
+        </div>
+          <img src="../assets/img/wo/ic_goto.png" class="goto-button"/>
+      </router-link>
     </div>
+    <!-- 选项栏 -->
     <div class="list-wrapper">
       <div class="list-item">
+
         <div class="item">
           <div class="item-context">
             <img src="../assets/img/wo/ic_my_schedule.png"/>
             <span class="item-text">待办事项</span>
           </div>
-          <div class="goto-button">></div>
+          <img src="../assets/img/wo/ic_goto.png" class="goto-button"/>
         </div>
+        <!-- 跳转至课程页面 -->
+        <router-link to="/myCourse">
         <div class="item">
           <div class="item-context">
             <img src="../assets/img/wo/ic_my_learnrecord.png"/>
             <span class="item-text">课程</span>
           </div>
-          <div class="goto-button">></div>
+          <img src="../assets/img/wo/ic_goto.png" class="goto-button"/>
         </div>
+        </router-link>
         <div class="item">
           <div class="item-context">
             <img src="../assets/img/wo/ic_my_yunpan.png"/>
             <span class="item-text">云盘</span>
           </div>
-          <div class="goto-button">></div>
+          <img src="../assets/img/wo/ic_goto.png" class="goto-button"/>
         </div>
         <div class="item">
           <div class="item-context">
             <img src="../assets/img/wo/ic_my_group.png"/>
             <span class="item-text">小组</span>
           </div>
-          <div class="goto-button">></div>
+          <img src="../assets/img/wo/ic_goto.png" class="goto-button"/>
         </div>
         <div class="item">
           <div class="item-context">
             <img src="../assets/img/wo/ic_my_note.png"/>
             <span class="item-text">笔记本</span>
           </div>
-          <div class="goto-button">></div>
+          <img src="../assets/img/wo/ic_goto.png" class="goto-button"/>
         </div>
         <div class="item">
           <div class="item-context">
             <img src="../assets/img/wo/ic_my_setting.png"/>
             <span class="item-text">设置</span>
           </div>
-          <div class="goto-button">></div>
+          <img src="../assets/img/wo/ic_goto.png" class="goto-button"/>
         </div>
       </div>
     </div>
@@ -61,6 +69,7 @@
 </template>
 
 <script>
+  // 引用底部导航组件
   import NavBar from './compontentPage/NavBar.vue'
 export default {
   components:{
@@ -110,9 +119,9 @@ export default {
   font-size: 1.2em;
 }
 .goto-button{
-  font-size: 2em;
+  height: 15px;
+  width: 15px;
   margin: 10px;
-  color: #cccccc;
 }
 .list-item{
   width: 100%;
@@ -129,13 +138,17 @@ export default {
   display: flex;
   align-items: center;
 }
-.item img{
+.item-context img{
   width: 40px;
   height: 40px;
   margin: 15px;
 }
 a{
+  width: 100%;
   text-decoration: none;   /* 清除a标签的下划线 */
-  color:#cccccc;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  color: #000000;
 }
 </style>

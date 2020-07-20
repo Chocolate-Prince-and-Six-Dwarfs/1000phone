@@ -7,39 +7,98 @@
             </div>
             <div class="searchTitle">
                 <div class="searchTitleText">
-                    找应用
+                    {{ this.$route.query.title }}
                 </div>
             </div>
         </div>
 
         <div class="searchMainBody">
             <!-- 搜索框 -->
-            <div class="searchDiv" @click="clickToSearch()">
+            <div class="searchDiv">
                 <div class="searchDivImgDiv">
                     <img class="searchDivImg" src="../assets/img/shouye/search.png">
                 </div>
-                <input id="searchInput" class="searchInput">
+                <input id="searchInput" class="searchInput" @input="showOrHideHistory()" @keyup.enter="enterToSearch()">
             </div>
-            <!-- 历史记录 -->
-            <div class="searchHistory">
-                <div class="searchHistoryTitle">最近搜索</div>
-                <img class="searchHistoryImg" src="../assets/img/shouye/delete.png">
+
+            <div v-if="!searchResultIsShow" class="searchHistoryBody">
+                <!-- 历史记录 -->
+                <div class="searchHistory">
+                    <div class="searchHistoryTitle">最近搜索</div>
+                    <img class="searchHistoryImg" @click="clearHistoryList()" src="../assets/img/shouye/delete.png">
+                </div>
+                <div class="historyRecords">
+                    <div v-for="(item,index) in historyList" :key="index" class="historyRecordsItem">
+                        {{ item }}
+                    </div>
+                </div>
+                <div class="taoLaoBanWuDi">
+                    陶老板专属搜索界面<br>
+                    😃😃😃
+                </div>
             </div>
-            <div class="taoLaoBanWuDi">
-                陶老板专属搜索界面<br>
-                😃😃😃
+            <div v-if="searchResultIsShow" class="searchResultBody">
+                <div class="searchResult">
+                    暂无搜索结果<br>
+                    😶😶😶
+                </div>
             </div>
         </div>
+
+        
   </div>
 </template>
 
 <script>
 export default {
-  methods: {
+    data(){
+        return {
+            searchResultIsShow: false,
+            historyList: []
+        }
+    },
+    methods: {
         toPre: function(){
             this.$router.go(-1)
+        },
+        checkInputValue: function(){
+            var inputValue = document.getElementById('searchInput').value
+            if( inputValue == null || inputValue == "" ){
+                this.searchResultIsShow = false
+                return null
+            }else{
+                this.searchResultIsShow = true
+                return inputValue
+            }
+        },
+        enterToSearch: function(){
+            var inputValue = this.checkInputValue()
+            if(inputValue == null || inputValue == ""){
+                return
+            }else{
+                for(var i = 0; i < this.historyList.length; i++){
+                    if(this.historyList.indexOf(inputValue) == -1){
+                        this.historyList.push(inputValue)
+                    }
+                }
+                localStorage.setItem('history',JSON.stringify(this.historyList))
+            }
+        },
+        showOrHideHistory: function(){
+            this.checkInputValue()
+        },
+        clearHistoryList: function(){
+            this.historyList = []
+            localStorage.setItem('history',JSON.stringify(this.historyList))
+            this.historyList = JSON.parse(localStorage.getItem('history'))
+        },
+        getLocalHistoryList: function(){
+            this.historyList = JSON.parse(localStorage.getItem('history'))
         }
-  },
+    },
+    created() {
+        this.getLocalHistoryList()
+    },
 };
 </script>
 <style scoped>
@@ -103,6 +162,9 @@ export default {
     width: 20px;
     height: 20px;
 }
+.searchHistoryBody, .searchResultBody{
+    width: 100%;
+}
 .searchHistory{
     width: 100%;
     border-top: 1px solid #dddddd;
@@ -114,6 +176,12 @@ export default {
     align-items: center;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+.searchResult{
+    text-align: center;
+    font-size: 12px;
+    color: #cfcfcf;
+    margin-top: 100px;
 }
 .searchHistoryTitle{
     font-size: 15px;
@@ -130,5 +198,23 @@ export default {
     font-size: 30px;
     color: #cfcfcf;
     margin-top: 20px;
+}
+.historyRecords{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.historyRecordsItem{
+    background-color: #cfcfcf;
+    border-radius: 45px;
+    font-size: 8px;
+    margin: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 6px;
+    padding-left: 6px;
 }
 </style>
