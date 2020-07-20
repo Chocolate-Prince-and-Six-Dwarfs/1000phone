@@ -5,6 +5,7 @@ import Information from '@/components/information'
 import Note from '@/components/note'
 import My from '@/components/my'
 import MyAccount from '@/components/myAccount'
+import MyCourse from '@/components/myCourse'
 import Recently from '@/components/recently'
 import search from '@/components/search'
 import RecentlyDetail from '@/components/recentlyDetail'
@@ -37,6 +38,11 @@ export default new Router({
       path: '/myAccount',
       name: 'MyAccount',
       component: MyAccount
+    },
+	{
+      path: '/myCourse',
+      name: 'MyCourse',
+      component: MyCourse
     },
     {
       path: '/recently',
