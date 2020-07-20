@@ -19,19 +19,23 @@
           </div>
           <div class="name">
               <span class="main-text">姓名</span>
+              <div class="name-text">陶老板</div>
           </div>
           <div class="sex">
               <span class="main-text">性别</span>
+              <div class="textinfo">男</div>
               <img class="goto" src="../assets/img/jt2.png"/>
           </div>
           <div class="description">
               <span class="main-text">描述</span>
+              <div class="textinfo">陶老板牛的啊</div>
               <img class="goto" src="../assets/img/jt2.png"/>
           </div>
           <div class="phoneNum">
               <div class="phoneNum-line"></div>
               <div class="phoneNum-text">
                   <span class="main-text">手机号</span>
+                  <div class="textinfo" id="phoneinfo">88888888</div>
                   <img class="goto" src="../assets/img/jt2.png"/>
               </div>
           </div>
@@ -39,16 +43,18 @@
               <div class="work-line">
                   <div class="work-main-text">
                       <span class="main-text">单位</span>
+                      <div class="work-add">+</div>
                   </div>
               </div>
               <div class="work-text">
-                  
+                  <div>西南石油大学<br/>学号/工号：000000000001</div> 
               </div>
           </div>
           <div class="wallet">
               <div class="wallet-line"></div>
               <div class="wallet-text">
                   <span class="main-text">钱包</span>
+                  <div class="wallet-info">0元</div>
                   <img class="goto" src="../assets/img/jt2.png"/>
               </div>
           </div>
@@ -158,11 +164,26 @@ export default {
     }
     .work-main-text{
         margin-left: 10px;
+        height:27px;
+        width: 100%;
+        color:#999999;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .work-add{
+        color:#999999;
+        font-size: 20px;
+        margin-right: 15px;
     }
     .work-text{
         width:100%;
         height:60px; 
         margin-left: 10px;
+        display: flex;
+        align-items: center;
+        color:#999999;
     }
     .wallet-line, .cancel-line{
         width:100%;
@@ -170,11 +191,19 @@ export default {
         background-color:#f4f7f7;
     }
     .wallet-text,.cancel-text{
-        width:100%;
+        width:96%;
         height:45px; 
         display: flex;
         align-items: center;
-        margin-left: 10px;
+        margin-left: 3%;
+        position: relative;
+        margin-right: 1%;
+    }
+    .wallet-info{
+        position: absolute;
+        right: 28px;
+        color: #b3b3b3;
+        font-size: 12px;
     }
     .account-bottom{
         width: 100%;
@@ -198,5 +227,16 @@ export default {
         right: 10px;
         width: 20px;
         height: 20px;
+    }
+    .name-text{
+        color: #009bff;
+        margin-left: 30px;
+    }
+    .textinfo{
+        color: #999999;
+        margin-left: 30px;
+    }
+    #phoneinfo{
+        margin-left: 15px !important;
     }
 </style>
