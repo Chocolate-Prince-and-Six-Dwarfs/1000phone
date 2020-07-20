@@ -1,7 +1,7 @@
 <template>
   <div class="re_content">
     <div class="re_top">
-      <img class="re_back" src="../assets/img/recently_back.png" alt="" @click="toHome">
+      <img class="re_back" src="../assets/img/recently_back.png" @click="toHome">
       <span>最近使用</span>
     </div>
     <div style="width: 100%; height: 40px;"></div>
@@ -14,7 +14,6 @@
         <img class="re_item_img" :src="aitem.img">
         <div class="re_item_word">
           <span class="re_item_name">{{aitem.name}}</span>
-          <span class="re_item_text" v-if="aitem.text">{{aitem.text}}</span>
           <div class="re_item_icon" v-if="aitem.icon">{{aitem.icon}}</div>
         </div>
         <button class="re_item_button" @click="out(aindex)">移出</button>
@@ -26,7 +25,6 @@
         <img class="re_item_img" :src="oitem.img">
         <div class="re_item_word">
           <span class="re_item_name">{{oitem.name}}</span>
-          <span class="re_item_text" v-if="oitem.text">{{oitem.text}}</span>
           <div class="re_item_icon" v-if="oitem.icon">{{oitem.icon}}</div>
         </div>
         <button class="re_item_button" @click="add(oindex)">+常用</button>
@@ -45,92 +43,92 @@
         always: [{
             img: require('@/assets/img/shouye/ic_message_todo.png'),
             name: '考试',
-            text: '',
+            type: '1',
             icon: '',
           },
           {
             img: require('@/assets/img/head_notice.png'),
             name: '通知',
-            text: '',
+            type: '2',
             icon: '',
           },
           {
             img: require('@/assets/img/shouye/ic_group_course.png'),
             name: '大学生职业生涯规划',
-            text: '',
+            type: '4',
             icon: '课程',
           },
         ],
         once: [{
             img: require('@/assets/img/shouye/ic_group_course.png'),
             name: '软件工程综合实现与技能实习',
-            text: '',
+            type: '4',
             icon: '课程',
           },
           {
             img: require('@/assets/img/shouye/ic_message_contact.png'),
             name: '最美古诗词',
-            text: '',
+            type: '3',
             icon: '',
           },
           {
             img: require('@/assets/img/shouye/ic_group_course.png'),
             name: '2020大数据处理技术',
-            text: '',
+            type: '4',
             icon: '课程',
           },
           {
             img: require('@/assets/img/shouye/ic_group_course.png'),
             name: '操作系统',
-            text: '',
+            type: '4',
             icon: '课程',
           },
           {
             img: require('@/assets/img/shouye/ic_group_course.png'),
             name: '建设法规',
-            text: '',
+            type: '4',
             icon: '课程',
           },
           {
             img: require('@/assets/img/shouye/ic_group_course.png'),
             name: '文献检索与利用（9-16周）',
-            text: '',
+            type: '4',
             icon: '课程',
           },
           {
             img: require('@/assets/img/shouye/ic_group_course.png'),
             name: 'Linux操作系统基础',
-            text: '',
+            type: '4',
             icon: '课程',
           },
           {
             img: require('@/assets/img/shouye/ic_group_course.png'),
             name: '高等数学',
-            text: '',
+            type: '4',
             icon: '课程',
           },
           {
             img: require('@/assets/img/shouye/ic_group_course.png'),
             name: '形势与政策1',
-            text: '',
+            type: '4',
             icon: '课程',
           },
           {
             img: require('@/assets/img/shouye/ic_group_course.png'),
             name: '人机交互的软件工程方法',
-            text: '',
+            type: '4',
             icon: '课程',
           },
           {
             img: require('@/assets/img/shouye/ic_group_course.png'),
             name: '线性代数',
-            text: '',
+            type: '4',
             icon: '课程',
           },
           {
             img: require('@/assets/img/shouye/ic_group_course.png'),
             name: '马克思主义基本原理概论',
-            text: '',
+            type: '4',
             icon: '课程',
           },
         ],
@@ -248,11 +246,6 @@
 
   .re_item_name {
     font-size: 14px;
-  }
-
-  .re_item_text {
-    font-size: 10px;
-    color: rgb(150, 150, 150);
   }
 
   .re_item_icon {
