@@ -91,7 +91,6 @@ export default {
                 url: '../../static/homeMainOptions.json'
             }).then(res => {
                 this.menu = res.data.MainMenu
-                console.log(this.menu[0].MenuOptions[0].title)
             }).catch(error => {
                 console.log(error)
             })

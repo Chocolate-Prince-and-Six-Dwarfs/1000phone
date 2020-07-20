@@ -18,14 +18,19 @@
                 <div class="searchDivImgDiv">
                     <img class="searchDivImg" src="../assets/img/shouye/search.png">
                 </div>
-                <input id="searchInput" class="searchInput" @input="enterToSearch()" @keyup.enter="enterToSearch()">
+                <input id="searchInput" class="searchInput" @input="showOrHideHistory()" @keyup.enter="enterToSearch()">
             </div>
 
             <div v-if="!searchResultIsShow" class="searchHistoryBody">
                 <!-- 历史记录 -->
                 <div class="searchHistory">
                     <div class="searchHistoryTitle">最近搜索</div>
-                    <img class="searchHistoryImg" src="../assets/img/shouye/delete.png">
+                    <img class="searchHistoryImg" @click="clearHistoryList()" src="../assets/img/shouye/delete.png">
+                </div>
+                <div class="historyRecords">
+                    <div v-for="(item,index) in historyList" :key="index" class="historyRecordsItem">
+                        {{ item }}
+                    </div>
                 </div>
                 <div class="taoLaoBanWuDi">
                     陶老板专属搜索界面<br>
@@ -60,17 +65,40 @@ export default {
             var inputValue = document.getElementById('searchInput').value
             if( inputValue == null || inputValue == "" ){
                 this.searchResultIsShow = false
+                return null
             }else{
                 this.searchResultIsShow = true
+                return inputValue
             }
         },
         enterToSearch: function(){
-            this.checkInputValue()
+            var inputValue = this.checkInputValue()
+            if(inputValue == null || inputValue == ""){
+                return
+            }else{
+                for(var i = 0; i < this.historyList.length; i++){
+                    if(this.historyList.indexOf(inputValue) == -1){
+                        this.historyList.push(inputValue)
+                    }
+                }
+                localStorage.setItem('history',JSON.stringify(this.historyList))
+            }
         },
         showOrHideHistory: function(){
             this.checkInputValue()
+        },
+        clearHistoryList: function(){
+            this.historyList = []
+            localStorage.setItem('history',JSON.stringify(this.historyList))
+            this.historyList = JSON.parse(localStorage.getItem('history'))
+        },
+        getLocalHistoryList: function(){
+            this.historyList = JSON.parse(localStorage.getItem('history'))
         }
-    }
+    },
+    created() {
+        this.getLocalHistoryList()
+    },
 };
 </script>
 <style scoped>
@@ -170,5 +198,23 @@ export default {
     font-size: 30px;
     color: #cfcfcf;
     margin-top: 20px;
+}
+.historyRecords{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.historyRecordsItem{
+    background-color: #cfcfcf;
+    border-radius: 45px;
+    font-size: 8px;
+    margin: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 6px;
+    padding-left: 6px;
 }
 </style>
