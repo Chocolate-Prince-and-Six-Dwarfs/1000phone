@@ -250,10 +250,12 @@ export default {
         background-color: #f4f7f7;;
     }
     .logout{
-        width: 100%;
+        width: 94%;
+        margin-left: 3%;
+        margin-right: 3%;
         height: 45px;
         position: absolute;
-        bottom: 0;
+        bottom: 15px;
         border-radius: 10px;
         border-width: 0;
         background-color: #fe3c2e;
