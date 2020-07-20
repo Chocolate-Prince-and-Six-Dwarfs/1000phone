@@ -15,7 +15,7 @@
 
     <div class="pageMain">
       <!-- 搜索框 -->
-      <div class="searchBar">
+      <div class="searchBar" @click="clickToSearch('找应用')">
         <img class="searchImg" src="../assets/img/xiaoxi/3.png" alt=""/>
         <span class="searchText">搜索</span>
       </div>
@@ -149,7 +149,14 @@
     },
 
     methods:{
-
+      clickToSearch: function(title){
+          this.$router.push({
+              path: '/search',
+              query: {
+                  title: title
+              }
+          })
+      }
     },
 
     components:{
