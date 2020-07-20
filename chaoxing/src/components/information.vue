@@ -3,7 +3,7 @@
 
      <!-- 页面头部 -->
     <div class="header1">
-      <div class="header">
+      <div class="messageheader">
         <span class="title">消息</span>
         <div class="options">
           <span>+</span>
@@ -147,6 +147,11 @@
             index: 0,
             }
     },
+
+    methods:{
+
+    },
+
     components:{
       'v-navbar':navBar
     }
@@ -162,7 +167,7 @@
     width: 100%;
     height: 60px;
   }
-  .header{
+  .messageheader{
     width: 100%;
     height: 60px;
     display: flex;
