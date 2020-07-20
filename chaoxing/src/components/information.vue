@@ -35,7 +35,10 @@
         <div class="class-item">
           <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
           <div class="class-item-info">
-            <span class="class-item-name">软件工程综合实习与技能实习</span>
+            <div class="class-item-name">
+              <span >软件工程综合实习与技能实习</span>
+            </div>
+
             <span class="class-item-time">6小时前</span>
 
             <div class="class-teacher">
@@ -49,7 +52,9 @@
         <div class="class-item">
           <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
           <div class="class-item-info">
-            <span class="class-item-name">Linux操作系统基础</span>
+            <div class="class-item-name">
+              <span >Linux操作系统基础</span>
+            </div>
             <span class="class-item-time">06-17</span>
 
             <div class="class-teacher">
@@ -63,7 +68,9 @@
         <div class="class-item">
           <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
           <div class="class-item-info">
-            <span class="class-item-name">2020大数据处理技术</span>
+            <div class="class-item-name">
+              <span >2020大数据处理技术</span>
+            </div>
             <span class="class-item-time">06-13</span>
 
             <div class="class-teacher">
@@ -77,7 +84,9 @@
         <div class="class-item">
           <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
           <div class="class-item-info">
-            <span class="class-item-name">2020大数据处理技术</span>
+            <div class="class-item-name">
+              <span >2020大数据处理技术</span>
+            </div>
             <span class="class-item-time">06-13</span>
 
             <div class="class-teacher">
@@ -91,7 +100,9 @@
         <div class="class-item">
           <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
           <div class="class-item-info">
-            <span class="class-item-name">2020大数据处理技术</span>
+            <div class="class-item-name">
+              <span >2020大数据处理技术</span>
+            </div>
             <span class="class-item-time">06-13</span>
 
             <div class="class-teacher">
@@ -105,7 +116,9 @@
         <div class="class-item">
           <img class="class-item-pic" src="../assets/img/xiaoxi/class.jpg" alt=""/>
           <div class="class-item-info">
-            <span class="class-item-name">2020大数据处理技术</span>
+            <div class="class-item-name">
+              <span >2020大数据处理技术</span>
+            </div>
             <span class="class-item-time">06-13</span>
 
             <div class="class-teacher">
@@ -239,6 +252,11 @@
   }
   .class-item-name{
     margin-left: 14px;
+    width: calc(100% - 60px);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .class-item-time{
     color: #BEBEBE;
