@@ -36,8 +36,8 @@
 
       dancer: function() {
         var tmp = parseInt(Math.random() * 4);
-        this.d_top = Math.random() * 80;
-        this.d_left = Math.random() * 80;
+        this.d_top = Math.random() * 90;
+        this.d_left = Math.random() * 90;
         this.message = this.message_list[tmp];
       }
     }
