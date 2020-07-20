@@ -29,19 +29,20 @@
                     <img class="searchHistoryImg" @click="clearHistoryList()" src="../assets/img/shouye/delete.png">
                 </div>
                 <div class="historyRecords">
-                    <div v-for="(item,index) in historyList" :key="index" class="historyRecordsItem">
+                    <div @click="historyClickSearch(item)" v-for="(item,index) in historyList" :key="index" class="historyRecordsItem">
                         {{ item }}
                     </div>
                 </div>
                 <div class="taoLaoBanWuDi">
-                    陶老板专属搜索界面<br>
+                    陶老板的搜索界面<br>
                     😃😃😃
                 </div>
             </div>
             <div v-if="searchResultIsShow" class="searchResultBody">
                 <div class="searchResult">
                     暂无搜索结果<br>
-                    😶😶😶
+                    😶😶😶<br>
+                    亲😙，不要为难我，这个功能没时间弄啦
                 </div>
             </div>
         </div>
@@ -75,15 +76,11 @@ export default {
         },
         enterToSearch: function(){
             var inputValue = this.checkInputValue()
-            console.log(inputValue)
             if(inputValue == null || inputValue == ""){
-                console.log("false.....")
                 return
             }else{
-                console.log("123")
                 if(this.historyList.indexOf(inputValue) == -1){
                     this.historyList.push(inputValue)
-                    console.log("lll"+this.historyList)
                 }
                 localStorage.setItem('history',JSON.stringify(this.historyList))
             }
@@ -104,10 +101,18 @@ export default {
         getLocalHistoryList: function(){
             this.historyList = JSON.parse(localStorage.getItem('history'))
         },
-        clearInputText(){
+        clearInputText: function(){
             this.searchResultIsShow = false
             this.imgChaChaIsShow = false
             document.getElementById('searchInput').value = ""
+        },
+        historyClickSearch: function(value){
+            var dom = document.getElementById('searchInput')
+            this.searchResultIsShow = true
+            this.imgChaChaIsShow = true
+            dom.value = value
+            dom.focus()
+            // dom.select()
         }
     },
     created() {
