@@ -10,9 +10,9 @@
       <div class="re_nav">
         <span class="re_nav_text">常用</span>
       </div>
-      <div class="re_item" v-for="(aitem, aindex) in always" :key="aindex" @click="toDetail">
+      <div class="re_item" v-for="(aitem, aindex) in always" :key="aindex">
         <img class="re_item_img" :src="aitem.img">
-        <div class="re_item_word">
+        <div class="re_item_word" @click="toDetail">
           <span class="re_item_name">{{aitem.name}}</span>
           <div class="re_item_icon" v-if="aitem.icon">{{aitem.icon}}</div>
         </div>
@@ -21,9 +21,9 @@
       <div class="re_nav">
         <span class="re_nav_text">最近使用</span>
       </div>
-      <div class="re_item" v-for="(oitem, oindex) in once" :key="oindex + 100" @click="toDetail">
+      <div class="re_item" v-for="(oitem, oindex) in once" :key="oindex + 100">
         <img class="re_item_img" :src="oitem.img">
-        <div class="re_item_word">
+        <div class="re_item_word" @click="toDetail">
           <span class="re_item_name">{{oitem.name}}</span>
           <div class="re_item_icon" v-if="oitem.icon">{{oitem.icon}}</div>
         </div>
