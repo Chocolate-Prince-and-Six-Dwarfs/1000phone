@@ -7,6 +7,7 @@ import My from '@/components/my'
 import MyAccount from '@/components/myAccount'
 import Recently from '@/components/recently'
 import search from '@/components/search'
+import RecentlyDetail from '@/components/recentlyDetail'
 
 Vue.use(Router)
 
@@ -47,5 +48,10 @@ export default new Router({
       name: 'search',
       component: search
     },
+    {
+      path: '/recentlyDetail',
+      name: 'RecentlyDetail',
+      component: RecentlyDetail
+    }
   ]
 })

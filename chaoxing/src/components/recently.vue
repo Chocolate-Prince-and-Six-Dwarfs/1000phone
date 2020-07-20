@@ -10,7 +10,7 @@
       <div class="re_nav">
         <span class="re_nav_text">常用</span>
       </div>
-      <div class="re_item" v-for="(aitem, aindex) in always" :key="aindex">
+      <div class="re_item" v-for="(aitem, aindex) in always" :key="aindex" @click="toDetail">
         <img class="re_item_img" :src="aitem.img">
         <div class="re_item_word">
           <span class="re_item_name">{{aitem.name}}</span>
@@ -22,7 +22,7 @@
       <div class="re_nav">
         <span class="re_nav_text">最近使用</span>
       </div>
-      <div class="re_item" v-for="(oitem, oindex) in once" :key="oindex + 100">
+      <div class="re_item" v-for="(oitem, oindex) in once" :key="oindex + 100" @click="toDetail">
         <img class="re_item_img" :src="oitem.img">
         <div class="re_item_word">
           <span class="re_item_name">{{oitem.name}}</span>
@@ -144,6 +144,10 @@
         this.$router.replace('/');
       },
 
+      toDetail: function() {
+        this.$router.replace('/recentlyDetail');
+      },
+
       add: function(index) {
         this.always.push(this.once[index]);
         this.once.splice(index, 1);
@@ -153,7 +157,7 @@
           this.tip_disp = 'none';
         }, 500);
       },
-      
+
       out: function(index) {
         this.once.push(this.always[index]);
         this.always.splice(index, 1);
