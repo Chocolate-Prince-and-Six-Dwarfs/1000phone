@@ -5,17 +5,30 @@
     <div class="header1">
       <div class="messageheader">
         <span class="title">消息</span>
-        <div class="options">
+        <div @click="ShowMenu" class="options">
           <span>+</span>
+        </div>
+        <div :class="showMenu ? 'show' : 'hidden'" class="menu-wrapper">
+          <div class="menu-content">
+            <div class="menu-item">
+              <span class="menu-item">新建群聊</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item">建文件夹</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item">批量编辑</span>
+            </div>
+          </div>
         </div>
         <div class="line"></div>
       </div>
     </div>
 
 
-    <div class="pageMain">
+    <div @click="HiddenMenu" class="pageMain">
       <!-- 搜索框 -->
-      <div class="searchBar" @click="clickToSearch('找应用')">
+      <div class="searchBar" @click="clickToSearch('找课程')">
         <img class="searchImg" src="../assets/img/xiaoxi/3.png" alt=""/>
         <span class="searchText">搜索</span>
       </div>
@@ -144,8 +157,9 @@
   export default {
     data(){
         return {
-            index: 0,
-            }
+          index: 0,
+          showMenu:false
+        }
     },
 
     methods:{
@@ -156,6 +170,13 @@
                   title: title
               }
           })
+      },
+
+      ShowMenu:function(){
+        this.showMenu = !this.showMenu;
+      },
+      HiddenMenu:function(){
+        this.showMenu = false;
       }
     },
 
@@ -280,5 +301,28 @@
     color: #BEBEBE;
     margin-top: 10px;
     margin-left: 15px;
+  }
+
+  .show{
+    display: block;
+  }
+  .hidden{
+    display: none;
+  }
+
+  .menu-wrapper{
+    position: absolute;
+    right: 5px;
+    top: 60px;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px #999999;
+  }
+  .menu-content{
+    display: flex;
+    flex-direction: column;
+
+  }
+  .menu-item{
+    margin: 10px;
   }
 </style>
