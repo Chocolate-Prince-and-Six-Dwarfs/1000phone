@@ -100,10 +100,10 @@ export default {
 </script>
 
 <style>
-*{
-    /* font-family: KaiTi; */
+/* *{
+    font-family: KaiTi;
     font-family: Microsoft JhengHei;
-}
+} */
 .homePage{
     width: 100%;
     /* overflow:auto; */
@@ -141,6 +141,7 @@ export default {
 .homeTitleText{
     font-size: 17px;
     font-weight: bold;
+    font-family: Microsoft JhengHei;
 }
 .homeScanText{
     font-size: 10px;

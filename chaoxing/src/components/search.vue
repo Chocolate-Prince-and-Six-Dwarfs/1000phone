@@ -3,7 +3,7 @@
         <!-- 上方导航 -->
         <div class="searchTopNav">
             <div class="searchReturnPre" @click="toPre">
-                <img class="searchReturnPreImg" src="../assets/img/jt.png" alt="">
+                <img class="searchReturnPreImg" src="../assets/img/jt.png">
             </div>
             <div class="searchTitle">
                 <div class="searchTitleText">
@@ -17,6 +17,7 @@
             <div class="searchDiv">
                 <div class="searchDivImgDiv">
                     <img class="searchDivImg" src="../assets/img/shouye/search.png">
+                    <img v-if="imgChaChaIsShow" @click="clearInputText()" class="searchDivImgCha" src="../assets/img/shouye/chacha.png">
                 </div>
                 <input id="searchInput" class="searchInput" @input="showOrHideHistory()" @keyup.enter="enterToSearch()">
             </div>
@@ -54,6 +55,7 @@ export default {
     data(){
         return {
             searchResultIsShow: false,
+            imgChaChaIsShow: false,
             historyList: []
         }
     },
@@ -73,19 +75,26 @@ export default {
         },
         enterToSearch: function(){
             var inputValue = this.checkInputValue()
+            console.log(inputValue)
             if(inputValue == null || inputValue == ""){
+                console.log("false.....")
                 return
             }else{
-                for(var i = 0; i < this.historyList.length; i++){
-                    if(this.historyList.indexOf(inputValue) == -1){
-                        this.historyList.push(inputValue)
-                    }
+                console.log("123")
+                if(this.historyList.indexOf(inputValue) == -1){
+                    this.historyList.push(inputValue)
+                    console.log("lll"+this.historyList)
                 }
                 localStorage.setItem('history',JSON.stringify(this.historyList))
             }
         },
         showOrHideHistory: function(){
-            this.checkInputValue()
+            var inputValue = this.checkInputValue()
+            if(inputValue == null || inputValue == ""){
+                this.imgChaChaIsShow = false
+            }else{
+                this.imgChaChaIsShow = true
+            }
         },
         clearHistoryList: function(){
             this.historyList = []
@@ -94,6 +103,11 @@ export default {
         },
         getLocalHistoryList: function(){
             this.historyList = JSON.parse(localStorage.getItem('history'))
+        },
+        clearInputText(){
+            this.searchResultIsShow = false
+            this.imgChaChaIsShow = false
+            document.getElementById('searchInput').value = ""
         }
     },
     created() {
@@ -126,7 +140,8 @@ export default {
     text-align: center;
 }
 .searchTitleText{
-    font-size: 17px;
+    font-size: 18px;
+    font-family: Microsoft JhengHei;
     font-weight: bold;
 }
 .searchMainBody{
@@ -161,6 +176,14 @@ export default {
     position: relative;
     width: 20px;
     height: 20px;
+    margin-bottom: 2px;
+}
+.searchDivImgCha{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 5px;
+    left: calc(100vw - 40px);
 }
 .searchHistoryBody, .searchResultBody{
     width: 100%;
