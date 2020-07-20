@@ -223,7 +223,7 @@ export default {
     }
     .group-name
     {
-        font-size: 20px;
+        font-size: 18px;
         color: #333333;
     }
     .group-selector-img
@@ -285,13 +285,13 @@ export default {
     }
     .notebook-img
     {
-        width: 32px;
-        height: 32px;
+        width: 30px;
+        height: 30px;
         margin-right: 10px;
     }
     .notebook-text
     {
-        font-size: 18px;
+        font-size: 16px;
     }
     .add-way
     {
@@ -302,13 +302,13 @@ export default {
     }
     .mic-img
     {
-        width: 22px;
-        height: 32px;
-        margin-right: 36px;
+        width: 18px;
+        height: 28px;
+        margin-right: 32px;
     }
     .ca-img
     {
-        width: 32px;
+        width: 28px;
         height: 26px;
     }
     .notebook-container
@@ -330,8 +330,8 @@ export default {
     }
     .note-head
     {
-        width: 47px;
-        height: 47px;
+        width: 40px;
+        height: 40px;
         border-radius: 4px;
         margin: 18px 12px;
     }
@@ -353,7 +353,7 @@ export default {
     }
     .note-owner-name
     {
-        font-size: 18px;
+        font-size: 16px;
         color: #0593f0;
     }
     .type
@@ -373,7 +373,7 @@ export default {
     }
     .group
     {
-        font-size: 18px;
+        font-size: 16px;
         color: #aaaaaa;
     }
     .time-read
@@ -385,13 +385,13 @@ export default {
     }
     .time
     {
-        font-size: 16px;
+        font-size: 14px;
         color: #949494;
         margin-right: 20px;
     }
     .read
     {
-        font-size: 16px;
+        font-size: 14px;
         color: #0593f0;
     }
     .note-content
@@ -406,7 +406,7 @@ export default {
     .note-title
     {
         color: #020202;
-        font-size: 18px;
+        font-size: 16px;
         margin-bottom: 20px;
     }
     .note-text
@@ -433,13 +433,13 @@ export default {
     }
     .note-tool-img
     {
-        width: 26px;
-        height: 26px;
+        width: 24px;
+        height: 24px;
         margin-right: 10px;
     }
     .note-tool-text
     {
-        font-size: 16px;
+        font-size: 14px;
     }
     .group-container
     {
